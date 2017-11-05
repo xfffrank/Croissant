@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post
+from .models import Post, AboutMe
 import markdown
 # Create your views here.
 
@@ -21,4 +21,11 @@ def detail(request, pk):
     return render(request, 'blog/detail.html', context={'post': post})
 
 def about(request):
-    return render(request, 'blog/about.html')
+    aboutme = get_object_or_404(AboutMe)
+    aboutme.body = markdown.markdown(aboutme.body, extensions = [
+        'markdown.extensions.extra',
+        'markdown.extensions.codehilite',
+        'markdown.extensions.toc',
+    ])
+
+    return render(request, 'blog/about.html', context={'about': aboutme})

@@ -5,17 +5,17 @@ from markdownx.models import MarkdownxField
 
 # Create your models here.
 
-class Category(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
-
-class Tag(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
+# class Category(models.Model):
+#     name = models.CharField(max_length=100)
+#
+#     def __str__(self):
+#         return self.name
+#
+# class Tag(models.Model):
+#     name = models.CharField(max_length=100)
+#
+#     def __str__(self):
+#         return self.name
 
 class Post(models.Model):
     """
@@ -34,8 +34,8 @@ class Post(models.Model):
     created_time = models.DateTimeField()
     modified_time = models.DateTimeField()
 
-    category = models.ForeignKey(Category)
-    tags = models.ManyToManyField(Tag, blank=True)
+    # category = models.ForeignKey(Category)
+    # tags = models.ManyToManyField(Tag, blank=True)
 
     author = models.ForeignKey(User)
 
@@ -44,6 +44,15 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'pk': self.pk})
+
+class AboutMe(models.Model):
+    title = models.CharField(max_length=70)
+    body = MarkdownxField()
+    # subheading = models.CharField(max_length=70)
+
+    def __str__(self):
+        return self.title
+
 
 
 
