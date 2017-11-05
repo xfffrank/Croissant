@@ -48,7 +48,7 @@ class Post(models.Model):
 class AboutMe(models.Model):
     title = models.CharField(max_length=70)
     body = MarkdownxField()
-    # subheading = models.CharField(max_length=70)
+    subheading = models.CharField(max_length=70, blank=True)
 
     def __str__(self):
         return self.title

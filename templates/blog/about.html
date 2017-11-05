@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+
 {% block main %}
 <!-- Page Header -->
 <header class="masthead" style="background-image: url('{% static 'blog/image/le_vent.jpg' %}')">
@@ -8,9 +9,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="page-heading">
+                <div class="site-heading">
                     <h1>{{ about.title }}</h1>
-                    <!--<span class="subheading">{{ about.subheading }}</span>-->
+                    <span class="subheading">{{ about.subheading }}</span>
                 </div>
             </div>
         </div>
