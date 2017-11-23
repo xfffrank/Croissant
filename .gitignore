@@ -10,3 +10,6 @@ fabfile.py
 # on server
 static/
 
+# Pycharm IDE files
+.idea/
+
