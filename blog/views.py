@@ -18,6 +18,8 @@ def detail(request, pk):
         'markdown.extensions.toc',
     ])
 
+    post.increase_views() # 阅读量 + 1
+
     return render(request, 'blog/detail.html', context={'post': post})
 
 def about(request):

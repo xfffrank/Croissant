@@ -16,12 +16,12 @@
                 <div class="post-heading">
                     <h1>{{ post.title }}</h1>
                     <!-- <h2 class="subheading">Problems look mighty small from 150 miles up</h2> -->
-                    <span class="meta">Posted by
-                <a href="#">{{ post.author }}</a>
-                on
-                <time datetime="{{ post.created_time }}">{{ post.created_time }}</time></span>
+                    <span class="meta">
+                        <time datetime="{{ post.created_time }}">{{ post.created_time }}</time>
+                        Category: <a href="">{{ post.category }}</a>
+                        Read: {{ post.views }}
+                    </span>
                 </div>
-
             </div>
         </div>
     </div>

@@ -3,4 +3,10 @@
 
 # Django
 db.sqlite3
+
+# automatic deployment
+fabfile.py
+
+# on server
 static/
+
