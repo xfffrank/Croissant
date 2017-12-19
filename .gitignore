@@ -10,3 +10,5 @@ fabfile.py
 # on server
 static/
 
+# mac
+.DS_Store
