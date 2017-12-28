@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post, AboutMe
+from .models import Post, AboutMe, Category
 import markdown
 # Create your views here.
 
@@ -8,6 +8,12 @@ def index(request):
     return render(request, 'blog/index.html', context={
         'post_list': post_list
     })
+
+def category(request, pk):
+    category = get_object_or_404(Category, pk=pk)
+    post_list = Post.objects.filter(category=category).order_by('-created_time')
+    return render(request, 'blog/index.html', context={'post_list': post_list})
+
 
 def detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
