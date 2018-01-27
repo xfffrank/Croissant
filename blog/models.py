@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
-from markdownx.models import MarkdownxField
+# from markdownx.models import MarkdownxField
 
 # Create your models here.
 
@@ -29,8 +29,8 @@ class Post(models.Model):
     views：阅读量；
     """
     title = models.CharField(max_length=70)
-    # body = models.TextField()
-    body = MarkdownxField()
+    body = models.TextField()
+    # body = MarkdownxField()
 
     created_time = models.DateTimeField()
     modified_time = models.DateTimeField()
@@ -57,7 +57,8 @@ class Post(models.Model):
 
 class AboutMe(models.Model):
     title = models.CharField(max_length=70)
-    body = MarkdownxField()
+    # body = MarkdownxField()
+    body = models.TextField()
     subheading = models.CharField(max_length=70, blank=True)
 
     def __str__(self):
