@@ -1,4 +1,4 @@
 # Croissant
 
-* A website implemented with Django framework.
-* It is a part of my final project when I was an undergraduate.
+* A blog website implemented with Django framework.
+* I followed [this tutorial](https://www.zmrenwu.com/post/2/) to implement most of the modules.
